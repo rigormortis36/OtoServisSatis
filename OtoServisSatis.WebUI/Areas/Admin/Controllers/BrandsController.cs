@@ -15,7 +15,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         }
 
         // GET: BrandsController
-        public async Task<ActionResult> IndexAsync()
+        public async Task<IActionResult> IndexAsync()
         {
             var model = await _service.GetAllAsync();
             return View(model);
@@ -78,9 +78,10 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         }
 
         // GET: BrandsController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> DeleteAsync(int id)
         {
-            return View();
+            var model = await _service.FindAsync(id);
+            return View(model);
         }
 
         // POST: BrandsController/Delete/5

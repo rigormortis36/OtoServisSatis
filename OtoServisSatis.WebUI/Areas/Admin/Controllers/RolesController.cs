@@ -16,7 +16,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         }
 
         // GET: RolesController
-        public async Task<ActionResult> IndexAsync()
+        public async Task<IActionResult> IndexAsync()
         {
             var model = await _service.GetAllAsync();
             return View(model);
