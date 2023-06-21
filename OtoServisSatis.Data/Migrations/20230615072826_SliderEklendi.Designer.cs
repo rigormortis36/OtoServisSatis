@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OtoServisSatis.Data;
 
@@ -11,13 +12,15 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230615072826_SliderEklendi")]
+    partial class SliderEklendi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.7")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -29,9 +32,6 @@ namespace OtoServisSatis.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Anasayfa")
-                        .HasColumnType("bit");
 
                     b.Property<decimal>("Fiyati")
                         .HasColumnType("decimal(18,2)");
@@ -140,7 +140,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 6, 21, 11, 26, 9, 515, DateTimeKind.Local).AddTicks(5996),
+                            EklenmeTarihi = new DateTime(2023, 6, 15, 10, 28, 26, 23, DateTimeKind.Local).AddTicks(2887),
                             Email = "admin@otoservisstasi.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
