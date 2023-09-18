@@ -20,7 +20,7 @@ namespace OtoServisSatis.Data
         public DbSet<Slider> Sliders { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=10.0.100.194;initial catalog=OtoServisSatisNetCore;persist security info=True;user id=bilgiislem;password=pos123*;MultipleActiveResultSets=True;Trust Server Certificate=true");
+            optionsBuilder.UseSqlServer();
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
